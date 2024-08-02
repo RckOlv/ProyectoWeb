@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Productos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header>
+        <h1>Productos</h1>
+    </header>
+    <main>
+        <div>
+            <h2>Lista de Productos</h2>
+            <div th:each="producto : ${productos}">
+                <h3 th:text="${producto.nombre}">Nombre del Producto</h3>
+                <p th:text="${producto.descripcion}">Descripción del Producto</p>
+                <a th:href="@{/product/{id}(id=${producto.id})}">Ver Detalles</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda de Repuestos para Motos</p>
+    </footer>
+</body>
+</html>

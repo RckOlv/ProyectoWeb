@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header>
+        <h1>Carrito de Compras</h1>
+    </header>
+    <main>
+        <div>
+            <h2>Items en el Carrito</h2>
+            <div th:each="item : ${carrito.items}">
+                <h3 th:text="${item.producto.nombre}">Nombre del Producto</h3>
+                <p>Precio: <span th:text="${item.producto.precio}">Precio</span></p>
+                <p>Cantidad: <span th:text="${item.cantidad}">Cantidad</span></p>
+            </div>
+            <a href="/order">Realizar Pedido</a>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda de Repuestos para Motos</p>
+    </footer>
+</body>
+</html>

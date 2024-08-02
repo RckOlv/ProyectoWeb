@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Orden de Compra</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header>
+        <h1>Orden de Compra</h1>
+    </header>
+    <main>
+        <div>
+            <h2>Resumen de la Orden</h2>
+            <div th:each="orden : ${orden}">
+                <h3 th:text="${orden.producto.nombre}">Nombre del Producto</h3>
+                <p>Precio: <span th:text="${orden.producto.precio}">Precio</span></p>
+                <p>Cantidad: <span th:text="${orden.cantidad}">Cantidad</span></p>
+            </div>
+            <p>Total: <span th:text="${total}">Total</span></p>
+            <form action="/order/complete" method="post">
+                <button type="submit">Confirmar Pedido</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda de Repuestos para Motos</p>
+    </footer>
+</body>
+</html>

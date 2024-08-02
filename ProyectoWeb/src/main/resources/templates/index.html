@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Tienda de Repuestos</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a la Tienda de Repuestos para Motos</h1>
+        <nav>
+            <a href="/" th:text="#{home}">Inicio</a>
+            <a href="/products" th:text="#{products}">Productos</a>
+            <a href="/cart" th:text="#{cart}">Carrito</a>
+            <a href="/login" th:text="#{login}">Iniciar sesión</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Destacados</h2>
+        <!-- Aquí puedes incluir una sección con productos destacados o recomendaciones -->
+    </main>
+    <footer>
+        <p>&copy; 2024 Tienda de Repuestos para Motos</p>
+    </footer>
+</body>
+</html>
